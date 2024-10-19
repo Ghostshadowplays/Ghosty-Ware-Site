@@ -1,12 +1,17 @@
-from flask import Flask, render_template, redirect, request
-from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
-
+from flask import Flask, render_template, request, redirect, url_for, session, send_from_directory, flash
+from flask_sqlalchemy import SQLAlchemy  # type: ignore
 
 # Create the Flask application instance
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///feedback.db'  # Path to the SQLite database
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.secret_key = 'supersecretkey'  # Required to use sessions
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Use your email provider's SMTP server
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'your_email@gmail.com'  # Your email
+app.config['MAIL_PASSWORD'] = 'your_password_or_app_password'  # Your email password
+app.config['MAIL_DEFAULT_SENDER'] = 'your_email@gmail.com'  # Default sender
 
 # Initialize the SQLAlchemy object
 db = SQLAlchemy(app)
@@ -20,10 +25,12 @@ class Feedback(db.Model):
     def __repr__(self):
         return f'<Feedback {self.name}>'
 
+# Home page
 @app.route('/')
 def home():
     return render_template('index.html')
 
+# Other routes
 @app.route('/downloads/<path:filename>')
 def download_file(filename):
     return send_from_directory('downloads', filename)
