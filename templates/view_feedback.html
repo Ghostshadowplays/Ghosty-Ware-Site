@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Feedback - Ghosty Ware</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Feedback Received</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/tutorials">Tutorials</a></li>
+                <li><a href="/feedback">Feedback</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/view-feedback">View Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>All Feedback</h2>
+        <ul>
+            {% for entry in feedback %}
+                <li><strong>{{ entry.name }}:</strong> {{ entry.message }}</li>
+            {% else %}
+                <li>No feedback received yet.</li>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Ghosty Ware</p>
+    </footer>
+</body>
+</html>

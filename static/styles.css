@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;              /* Use flexbox for layout */
+    align-items: center;       /* Center items vertically */
+    justify-content: space-between; /* Space between logo and nav */
+    padding: 0;
+    width: 100%;            /* Add some padding */
+}
+
+header h1 {
+    margin-top: 20px;   /* Adjust this value to move it up (negative values move it up) */
+    margin-right: 20px;   /* Adjust this value to move it to the right */
+}
+
+h1 {
+    color: #ffffff; /* Change color for h1 elements */
+}
+
+
+body {
+    background-image: url('/static/background2.jpg'); /* Adjust the path if needed */
+    background-size: cover; /* Makes the image cover the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+}
+
+main {
+    flex: 1;                    /* Allow main to grow and fill available space */
+}
+
+footer {
+    /* Optionally add styles for the footer */
+    padding: 10px;             /* Add some padding */
+    text-align: center;        /* Center footer text */
+}
+
+html, body {
+    height: 100%;                /* Set height to 100% for both elements */
+    margin: 0;                  /* Remove default margin */
+    padding: 0;
+    display: flex;              /* Use flexbox layout */
+    flex-direction: column;        /* Remove default padding */
+}
+
+.logo {
+    flex: 0 1 auto;           /* Allow logo to take up only necessary space */
+}
+
+.logo img {
+    height: 100px;
+    margin-left: 5px; /* Adjust this value to move the logo more to the left */
+}
+
+header img {
+    display: block; /* Center it */
+    margin: 0 auto; /* Centering */
+}
+
+nav {
+    flex: 1;
+    color: #ffffff;                  /* Allow nav to take the remaining space */
+}
+
+nav ul {
+    list-style: none;         /* Remove default list styling */
+    padding: 0;              /* Remove default padding */
+    margin: 0;               /* Remove default margin */
+    display: flex;
+    color: #ffffff;           /* Display items in a row */
+}
+
+nav li {
+    margin: 0 15px;          /* Space between nav items */
+}
+
+nav a {
+    text-decoration: none;    /* Remove underline from links */
+    color: #ffffff;             /* Change text color */
+}
+
+.btn-download {
+    background-color: #0a74da;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a.button {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF; /* Adjust color as needed */
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a.button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.feedback-section form {
+    display: flex;             /* Use flexbox for better alignment */
+    flex-direction: column;    /* Stack items vertically */
+    margin-top: 20px;         /* Adjust spacing above the form */
+}
+
+.feedback-section label {
+    margin-top: 10px;         /* Space above the label */
+}
+
+.feedback-section textarea {
+    margin-top: 10px;         /* Space above the textarea */
+    padding: 10px;            /* Padding inside the textarea */
+    width: 100%;              /* Full width */
+    height: 100px;            /* Set height for the textarea */
+    resize: none;             /* Prevent resizing (optional) */
+}
+
+/* Optional: Add some space between the textarea and the button */
+.feedback-section button {
+    margin-top: 10px;         /* Space above the submit button */
+}
