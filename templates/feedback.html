@@ -3,35 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback - Ghosty Ware</title>
+    <title>View Feedback - Ghosty Ware</title>
     <link rel="stylesheet" href="/static/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
     <header>
         <img src="/static/logo.png" alt="Ghosty Ware Logo" style="height: 60px;">
-        <h1>Feedback</h1>
+        <h1>Feedback Received</h1>
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/projects">Projects</a></li>
                 <li><a href="/tutorials">Tutorials</a></li>
                 <li><a href="/feedback">Feedback</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><a href="/contact">Contact</a></li> <!-- Removed extra '>' -->
             </ul>
         </nav>
     </header>
     <main>
-        <h2>Submit Your Feedback</h2>
-        <form action="/submit-feedback" method="post" class="feedback-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Submit</button>
-        </form>
+        <h2>All Feedback</h2>
+        <ul>
+            {% for entry in feedback %}
+                <li><strong>{{ entry.name }}:</strong> {{ entry.message }}</li>
+            {% else %}
+                <li>No feedback received yet.</li>
+            {% endfor %}
+        </ul>
     </main>
     <footer>
         <p>&copy; 2024 Ghosty Ware</p>
