@@ -27,7 +27,8 @@ with app.app_context():
 # Home page
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index.html')  # Make sure index.html exists in the templates directory
+
 
 # Other routes
 @app.route('/downloads/<path:filename>')
